@@ -7,3 +7,6 @@
 
 原项目
 https://github.com/liandu2024/clash
+
+
+###https://raw.githubusercontent.com/789cn/clash_proxy/refs/heads/main/Clash-Full.ini###
