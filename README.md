@@ -1,8 +1,8 @@
 # lian
 
 修改 Proxy.list
-修改 A1.list
-添加到Clash-LIAN.ini
+和 A1.list
+添加到Clash-Full.ini
 
 
 原项目
