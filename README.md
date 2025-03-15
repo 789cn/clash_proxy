@@ -5,10 +5,15 @@
 添加到Clash-Full.ini
 
 Fork
+
 https://github.com/789cn/clash
+
 直连Github
+
 https://raw.githubusercontent.com/789cn/clash/refs/heads/main/Clash-Full.ini
+
 geekery代理
+
 https://raw.githubusercontent.com/789cn/clash/refs/heads/main/proxy/clash-full.ini
 
 
