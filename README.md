@@ -20,7 +20,7 @@ https://raw.githubusercontent.com/789cn/clash/refs/heads/main/proxy/clash-full.i
 
 
 
-替换修改https://github.com/789cn/clash里的Clash-Full.ini
+替换修改https://github.com/789cn/clash 里的Clash-Full.ini
 
 ruleset=🌍 国外,https://raw.githubusercontent.com/789cn/clash_proxy/refs/heads/main/Proxy.list
 
