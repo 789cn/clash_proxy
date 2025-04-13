@@ -25,3 +25,5 @@ https://raw.githubusercontent.com/789cn/clash/refs/heads/main/proxy/clash-full.i
 ruleset=🌍 国外,https://raw.githubusercontent.com/789cn/clash_proxy/refs/heads/main/Proxy.list
 
 ruleset=➡️ 国内,https://raw.githubusercontent.com/789cn/clash_proxy/refs/heads/main/Direct.list
+
+ruleset=✨ AI1,https://raw.githubusercontent.com/789cn/clash_proxy/refs/heads/main/AI.list
