@@ -10,20 +10,21 @@ https://github.com/789cn/clash
 
 直连Github
 
-https://raw.githubusercontent.com/789cn/clash/refs/heads/main/Clash-Full.ini
+[[https://raw.githubusercontent.com/789cn/clash/refs/heads/main/Clash-Full.ini](https://raw.githubusercontent.com/789cn/clash_proxy/refs/heads/main/Clash-Full.ini)](https://raw.githubusercontent.com/789cn/clash_proxy/refs/heads/main/Clash-Full.ini)
 
-geekery代理
-
-https://raw.githubusercontent.com/789cn/clash/refs/heads/main/proxy/clash-full.ini
+ 
 
 
 
 
 
-替换修改https://github.com/789cn/clash 里的Clash-Full.ini
+替换修改Clash-Full.ini
 
 ruleset=🌍 国外,https://raw.githubusercontent.com/789cn/clash_proxy/refs/heads/main/Proxy.list
+
+ruleset=🌍 国外,https://raw.githubusercontent.com/789cn/clash_proxy/refs/heads/main/Global.list
 
 ruleset=➡️ 国内,https://raw.githubusercontent.com/789cn/clash_proxy/refs/heads/main/Direct.list
 
 ruleset=✨ AI1,https://raw.githubusercontent.com/789cn/clash_proxy/refs/heads/main/AI.list
+
