@@ -10,7 +10,7 @@ https://github.com/789cn/clash
 
 直连Github
 
-[[https://raw.githubusercontent.com/789cn/clash/refs/heads/main/Clash-Full.ini](https://raw.githubusercontent.com/789cn/clash_proxy/refs/heads/main/Clash-Full.ini)](https://raw.githubusercontent.com/789cn/clash_proxy/refs/heads/main/Clash-Full.ini)
+https://raw.githubusercontent.com/789cn/clash_proxy/refs/heads/main/Clash-Full.ini
 
  
 
