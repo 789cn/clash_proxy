@@ -1,10 +1,10 @@
 # lian
 
-修改Fork的项目
+修改本的项目的Clash-Full.ini
 和 A1.list
 添加到Clash-Full.ini
 
-Fork
+Fork同步
 
 https://github.com/789cn/clash
 
