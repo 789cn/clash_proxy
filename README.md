@@ -28,3 +28,6 @@ ruleset=➡️ 国内,https://raw.githubusercontent.com/789cn/clash_proxy/refs/h
 
 ruleset=✨ AI1,https://raw.githubusercontent.com/789cn/clash_proxy/refs/heads/main/AI.list
 
+
+
+### 配置文件复制到/etc/config/
