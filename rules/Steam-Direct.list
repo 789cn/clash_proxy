@@ -1,5 +1,5 @@
-# Steam · 商店 / 登录 / 下载 — Surge 规则集
-#
+# Steam ·  / 下载 — Surge 规则集  -直连
+# 
 # Repo:     https://github.com/mrblack0407/surge_rules
 # Updated:  2026-09-21
 # 范围:     国区商店、账号登录、客户端 API、游戏下载 CDN，以及 Steam 中国的国内 CDN
@@ -9,11 +9,7 @@
 #
 # 本文件供 Surge 的 RULE-SET 引用，不含策略字段；策略在引用处指定。
 
-# ═══ 账号登录、商店、客户端 API ═══
-# 覆盖 store / api / login / checkout / help / partner / cm 等全部子域。
-# 这些子域在国内可直连，且 Steam 会按地区返回国区价格与人民币支付方式，
-# 走境外节点反而会触发区域校验与支付方式缺失。
-DOMAIN-SUFFIX,steampowered.com
+
 
 # ═══ 游戏下载与连接管理 ═══
 # steamcontent.com 为游戏本体与更新的分发域，国内有落地节点

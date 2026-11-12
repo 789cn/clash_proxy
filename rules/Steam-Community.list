@@ -1,4 +1,4 @@
-# Steam · 社区 / 创意工坊 / 聊天 / 直播 — Surge 规则集
+# Steam · 社区 / 创意工坊 / 聊天 / 商店 / 登录 / 直播 — Surge 规则集 (代理)
 #
 # Repo:     https://github.com/mrblack0407/surge_rules
 # Updated:  2026-09-21
@@ -8,6 +8,12 @@
 # 引用顺序: 必须排在 Steam-Direct.list 之前
 #
 # 本文件供 Surge 的 RULE-SET 引用，不含策略字段；策略在引用处指定。
+
+# ═══ 账号登录、商店、客户端 API ═══
+# 覆盖 store / api / login / checkout / help / partner / cm 等全部子域。
+# 这些子域在国内可直连，且 Steam 会按地区返回国区价格与人民币支付方式，
+# 走境外节点反而会触发区域校验与支付方式缺失。
+DOMAIN-SUFFIX,steampowered.com
 
 # ═══ 社区主站 ═══
 # 一个域名承载个人资料、好友、群组、讨论区、市场、创意工坊、
