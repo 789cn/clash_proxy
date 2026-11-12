@@ -4,12 +4,11 @@
 
 | 规则集 | 内容 | 建议策略 |
 | --- | --- | --- |
-| [`rules/Steam-Community.list`](rules/Steam-Community.list) | Steam 社区、创意工坊内容、聊天、直播、Valve 官网 | 你的代理策略组 |
-| [`rules/Steam-Direct.list`](rules/Steam-Direct.list) | Steam 国区商店、账号登录、客户端 API、下载 CDN | `DIRECT` |
-| [`rules/Wargaming-CN-RU-Exclude.list`](rules/Wargaming-CN-RU-Exclude.list) | 坦克世界国服（已停运）与俄服 Lesta Games 的域名 | `DIRECT` |
-| [`rules/WorldOfTanks.list`](rules/WorldOfTanks.list) | 坦克世界国际服 EU / NA / ASIA 的登录、对局后端、账号、商城、CDN、官网 | 你的代理策略组 |
+| [`rules/Steam-Community.list`](https://raw.githubusercontent.com/mrblack0407/surge_rules/refs/heads/main/rules/Steam-Community.list) | Steam 社区、创意工坊内容、聊天、直播、Valve 官网 | 你的代理策略组 |
+| [`rules/Steam-Direct.list`](https://raw.githubusercontent.com/mrblack0407/surge_rules/refs/heads/main/rules/Steam-Direct.list) | Steam 国区商店、账号登录、客户端 API、下载 CDN | `DIRECT` |
 
-完整接入示例见 [examples/surge-snippet.conf](examples/surge-snippet.conf)。
+
+完整接入示例见 [examples/surge-snippet.conf](https://github.com/mrblack0407/surge_rules/blob/main/examples/surge-snippet.conf)。
 
 ---
 
@@ -47,7 +46,7 @@ RULE-SET,https://raw.githubusercontent.com/mrblack0407/surge_rules/main/rules/St
 
 走 **代理** 的是 `steamcommunity.com` 及其静态资源、创意工坊内容、聊天、直播。这是 Steam 唯一需要翻墙的主要功能面，登录本身不在其中 —— 客户端登录走 `api.steampowered.com`，手机令牌也走同一个域，都在直连侧。
 
-2026-09-21 从中国电信 AS4134 实测：`steamcommunity.com` 直连 0/15 全败、经节点 9/9 成功；而社区静态资源与 UGC 域（`community.*.steamstatic.com`、`steamusercontent.com` 等）直连 6/6 可用。也就是说**创意工坊「订阅」离不开代理，「下载」其实不需要** —— 但 UGC 直连实测也并不更快（101–127 KB/s vs 经节点 143–355 KB/s），所以整个社区面仍按同一策略走代理。数据见 [docs/steam-verification.md](docs/steam-verification.md)。
+2026-09-21 从中国电信 AS4134 实测：`steamcommunity.com` 直连 0/15 全败、经节点 9/9 成功；而社区静态资源与 UGC 域（`community.*.steamstatic.com`、`steamusercontent.com` 等）直连 6/6 可用。也就是说**创意工坊「订阅」离不开代理，「下载」其实不需要** —— 但 UGC 直连实测也并不更快（101–127 KB/s vs 经节点 143–355 KB/s），所以整个社区面仍按同一策略走代理。数据见 [docs/steam-verification.md]([docs/steam-verification.md](https://github.com/mrblack0407/surge_rules/blob/main/docs/steam-verification.md))。
 
 具体到症状：
 
