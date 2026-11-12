@@ -1,5 +1,7 @@
 # surge_rules
 
+## [`复刻-自用 Surge 规则集：Steam（国区商店/登录直连 + 社区/创意工坊走代理）、坦克世界国际服。域名经 DoH 双视角 DNS 实测核实。`](https://github.com/mrblack0407/surge_rules)
+
 自用的 Surge 规则集。每条域名都经 DNS 实测核实，不抄第三方规则集；核实方法与原始数据在 [`docs/`](docs/) 下按主题分文件记录。
 
 | 规则集 | 内容 | 建议策略 |
