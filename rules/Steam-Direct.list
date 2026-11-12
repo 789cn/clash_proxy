@@ -1,0 +1,67 @@
+# Steam · 商店 / 登录 / 下载 — Surge 规则集
+#
+# Repo:     https://github.com/mrblack0407/surge_rules
+# Updated:  2026-09-21
+# 范围:     国区商店、账号登录、客户端 API、游戏下载 CDN，以及 Steam 中国的国内 CDN
+# 建议策略: DIRECT
+# 核实方法: 全部条目经 DoH 双视角（Google / AliDNS）实测，见 docs/steam-verification.md
+# 引用顺序: 必须排在 Steam-Community.list 之后
+#
+# 本文件供 Surge 的 RULE-SET 引用，不含策略字段；策略在引用处指定。
+
+# ═══ 账号登录、商店、客户端 API ═══
+# 覆盖 store / api / login / checkout / help / partner / cm 等全部子域。
+# 这些子域在国内可直连，且 Steam 会按地区返回国区价格与人民币支付方式，
+# 走境外节点反而会触发区域校验与支付方式缺失。
+DOMAIN-SUFFIX,steampowered.com
+
+# ═══ 游戏下载与连接管理 ═══
+# steamcontent.com 为游戏本体与更新的分发域，国内有落地节点
+# steamserver.net 为 Steam 内容发现服务（dist-*.discovery.steamserver.net）
+# 两者的顶级域本身无 A 记录，实际主机在子域，DOMAIN-SUFFIX 可正常覆盖
+DOMAIN-SUFFIX,steamcontent.com
+DOMAIN-SUFFIX,steamserver.net
+
+# ═══ Steampipe 下载 CDN ═══
+DOMAIN-SUFFIX,steampipe.akamaized.net
+DOMAIN-SUFFIX,steampipe-kr.akamaized.net
+DOMAIN-SUFFIX,steampipe-partner.akamaized.net
+
+# ═══ 商店与客户端静态资源 ═══
+# store / cdn / shared / video 四组由商店页与库页面加载，国内可直连。
+# 社区侧的 community / avatars 见 Steam-Community.list，不要合并成
+# 一条 DOMAIN-SUFFIX,steamstatic.com —— 那正是上游规则集的问题所在。
+DOMAIN-SUFFIX,store.cloudflare.steamstatic.com
+DOMAIN-SUFFIX,store.akamai.steamstatic.com
+DOMAIN-SUFFIX,store.fastly.steamstatic.com
+DOMAIN-SUFFIX,cdn.cloudflare.steamstatic.com
+DOMAIN-SUFFIX,cdn.akamai.steamstatic.com
+DOMAIN-SUFFIX,cdn.fastly.steamstatic.com
+DOMAIN-SUFFIX,shared.cloudflare.steamstatic.com
+DOMAIN-SUFFIX,shared.akamai.steamstatic.com
+DOMAIN-SUFFIX,shared.fastly.steamstatic.com
+DOMAIN-SUFFIX,video.cloudflare.steamstatic.com
+DOMAIN-SUFFIX,video.akamai.steamstatic.com
+DOMAIN-SUFFIX,clientconfig.akamai.steamstatic.com
+DOMAIN-SUFFIX,client-update.akamai.steamstatic.com
+
+# ═══ 旧版商店 CDN（akamaihd.net 体系，仍在服役）═══
+DOMAIN-SUFFIX,steamstore-a.akamaihd.net
+DOMAIN-SUFFIX,steamcdn-a.akamaihd.net
+
+# ═══ 手机 App 资源（Steam 令牌 / 移动端商店）═══
+DOMAIN-SUFFIX,steammobile.akamaized.net
+
+# ═══ 游戏内静态资源与 Steamworks 开发者后台 ═══
+DOMAIN-SUFFIX,steamgames.com
+
+# ═══ Steam 中国（蒸汽平台）═══
+DOMAIN-SUFFIX,steamchina.com
+
+# ═══ 国区下载加速 CDN ═══
+# Valve 与国内 CDN 厂商合作的分发域，仅在国内解析到就近节点，
+# 走代理会解析到境外地址并把下载速度拖垮
+DOMAIN-SUFFIX,st.dl.eccdnx.com
+DOMAIN-SUFFIX,st.dl.bscstorage.net
+DOMAIN-SUFFIX,dl.steam.clngaa.com
+DOMAIN-SUFFIX,xz.pphimalayanrt.com
