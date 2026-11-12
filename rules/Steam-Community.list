@@ -1,0 +1,53 @@
+# Steam · 社区 / 创意工坊 / 聊天 / 直播 — Surge 规则集
+#
+# Repo:     https://github.com/mrblack0407/surge_rules
+# Updated:  2026-09-21
+# 范围:     国内无法直连或体验严重受损的 Steam 功能
+# 建议策略: 你的代理策略组
+# 核实方法: 全部条目经 DoH 双视角（Google / AliDNS）实测，见 docs/steam-verification.md
+# 引用顺序: 必须排在 Steam-Direct.list 之前
+#
+# 本文件供 Surge 的 RULE-SET 引用，不含策略字段；策略在引用处指定。
+
+# ═══ 社区主站 ═══
+# 一个域名承载个人资料、好友、群组、讨论区、市场、创意工坊、
+# 截图与指南、以及浏览器端的 OpenID 第三方登录
+DOMAIN-SUFFIX,steamcommunity.com
+DOMAIN-SUFFIX,steamcommunity-a.akamaihd.net
+
+# ═══ 社区静态资源 ═══
+# 头像、社区页样式与图片。缺这几条的典型症状是：
+# 社区页能打开但头像和图片全裂，或者加载到一半卡住
+DOMAIN-SUFFIX,community.cloudflare.steamstatic.com
+DOMAIN-SUFFIX,community.akamai.steamstatic.com
+DOMAIN-SUFFIX,community.fastly.steamstatic.com
+DOMAIN-SUFFIX,avatars.cloudflare.steamstatic.com
+DOMAIN-SUFFIX,avatars.akamai.steamstatic.com
+DOMAIN-SUFFIX,avatars.fastly.steamstatic.com
+DOMAIN-SUFFIX,avatars.steamstatic.com
+
+# ═══ 用户生成内容 ═══
+# Valve 的 UGC 云存储：旧式创意工坊项的文件本体、预览图、
+# 云存档、用户上传的截图原图。现代创意工坊项多走 SteamPipe
+# depot 分发（steamcontent.com，在直连侧），这里覆盖的是 UGC 那条路径。
+# 上游 SteamCN.list 把 steamusercontent.com 判为 DIRECT，
+# 与社区侧其余资源的策略相反
+DOMAIN-SUFFIX,steamusercontent.com
+DOMAIN-SUFFIX,steamusercontent-a.akamaihd.net
+DOMAIN-SUFFIX,steamuserimages-a.akamaihd.net
+
+# ═══ 聊天与短链 ═══
+# s.team 是 Valve 的短链域，承载好友邀请、个人资料短链与移动端令牌链接。
+# 它也会 302 到 store.steampowered.com —— 跳转后的商店域由 Steam-Direct.list
+# 重新匹配走直连，所以这里放代理不会影响商店
+DOMAIN-SUFFIX,steam-chat.com
+DOMAIN-SUFFIX,s.team
+
+# ═══ 直播与视频 ═══
+DOMAIN-SUFFIX,steam.tv
+DOMAIN-SUFFIX,steambroadcast.akamaized.net
+DOMAIN-SUFFIX,steamvideo-a.akamaihd.net
+
+# ═══ Valve 官网与产品站 ═══
+DOMAIN-SUFFIX,valvesoftware.com
+DOMAIN-SUFFIX,steamdeck.com
